@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  node:
+    image: trufflesuite/ganache-cli:latest
+    ports:
+      - '8545:8545'
+    volumes:
+      - ./ganache_data:/ganache_data
+    entrypoint:
+      - node
+      - /app/ganache-core.docker.cli.js
+      - --deterministic
+      - --db=/ganache_data
+      - --mnemonic
+      - 'random food meat red volume never electric meal factory use launch hour'
+      - --networkId
+      - '1337'
+      - --hostname
+      - '0.0.0.0'
+      - --debug
+      - --defaultBalanceEther
+      - '10000'
+  # ENTRYPOINT ["node", "./build/cli.node.js"]
+  # ENTRYPOINT ["node", "/app/ganache-core.docker.cli.js"]
