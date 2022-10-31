@@ -1,4 +1,4 @@
-# ganache-docker
+# ganache-cli-docker
 
 This project runs ganache-cli using docker
 
